@@ -14,7 +14,7 @@
     "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
-      "@": ["./src"]
+      "@/*": ["src/*"]
     },
     "types": ["element-plus/global"]
   },

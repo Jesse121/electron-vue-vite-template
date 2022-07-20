@@ -7,7 +7,6 @@
 
 <script setup lang="ts">
 import { useRouter } from "vue-router";
-// import { useCounterStore } from "../../stores/counter";
 import { useCounterStore } from "@/stores/counter";
 import { storeToRefs } from "pinia";
 
