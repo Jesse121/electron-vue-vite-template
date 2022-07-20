@@ -1,6 +1,6 @@
 <template>
   这里是登录页
-  <div @click="goHome">回首页</div>
+  <el-button @click="goHome">回首页</el-button>
 </template>
 
 <script setup lang="ts">

@@ -2,12 +2,7 @@
   <router-view></router-view>
 </template>
 
-<script setup lang="ts">
-import { useRouter } from "vue-router";
-const router = useRouter();
-const currentRoute = router.currentRoute.value;
-console.log(currentRoute);
-</script>
+<script setup lang="ts"></script>
 <style scoped>
 .logo {
   height: 6em;

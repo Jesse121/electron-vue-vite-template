@@ -2,13 +2,16 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
 import electron from "vite-plugin-electron";
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 const resolvePath = (dir: string) => path.join(__dirname, dir);
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
-    extensions: [".vue", ".ts", ".js"],
+    extensions: [".ts", ".tsx", ".js", ".json"],
     alias: {
       "@": resolvePath("./src"),
     },
@@ -36,6 +39,12 @@ export default defineConfig({
           },
         },
       },
+    }),
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
     }),
   ],
 });

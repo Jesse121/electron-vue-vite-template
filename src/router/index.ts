@@ -1,9 +1,4 @@
-import {
-  createRouter,
-  createWebHashHistory,
-  createWebHistory,
-  RouteRecordRaw,
-} from "vue-router";
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 
 import loginComponent from "@/views/login/login.vue";
 import homeComponent from "@/views/home/home.vue";
@@ -27,8 +22,7 @@ const routes: RouteRecordRaw[] = [
   },
 ];
 const router = createRouter({
-  history: createWebHistory(),
-  // history: createWebHashHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 
