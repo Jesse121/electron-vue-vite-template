@@ -57,5 +57,8 @@
 			"stylelint --quiet --fix",
 			"ls-lint"
 		]
+	},
+	"engines": {
+		"node": ">= 16.0.0"
 	}
 }

@@ -14,10 +14,4 @@ const goHome = () => {
 };
 </script>
 
-<style scoped lang="less">
-.name {
-	position: absolute;
-	display: flex;
-	width: 123px;
-}
-</style>
+<style scoped lang="scss"></style>

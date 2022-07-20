@@ -25,4 +25,4 @@ const increment = () => {
 };
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="scss"></style>
