@@ -9,7 +9,8 @@
 		"dev": "vite",
 		"build": "vue-tsc --noEmit && vite build && electron-builder",
 		"preview": "vite preview",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
 	},
 	"dependencies": {
 		"element-plus": "2.2.9",
@@ -25,6 +26,7 @@
 		"@typescript-eslint/eslint-plugin": "4.29.0",
 		"@typescript-eslint/parser": "4.29.0",
 		"@vitejs/plugin-vue": "^3.0.0",
+		"conventional-changelog-cli": "2.2.2",
 		"electron": "19.0.8",
 		"electron-builder": "23.1.0",
 		"eslint": "7.32.0",

@@ -1,14 +1,14 @@
 # 文件名及文件夹名命名规则
 ls:
-  src/renderer/src/components/*:
+  src/components/*:
     .dir: PascalCase # 组件文件夹名命名模式
-  src/renderer/src/views:
+  src/views:
     .dir: camelCase | snake_case
-  src/renderer/src/store:
+  src/stores:
     .dir: camelCase | kebab-case
-  src/renderer/src/router:
+  src/router:
     .dir: camelCase | kebab-case | regex:^__.+$
-  src/renderer/src:
+  src:
     .ts: camelCase
     .d.ts: camelCase | kebab-case
 ignore:
