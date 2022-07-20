@@ -1,31 +1,61 @@
 {
-  "name": "electron-vue-vite-template",
-  "private": true,
-  "version": "0.0.0",
-  "author": "Jesse",
-  "main": "dist/electron/main/index.js",
-  "description": "Really simple electron + vue + vite boilerplate",
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build && electron-builder",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "element-plus": "2.2.9",
-    "pinia": "2.0.16",
-    "vue": "3.2.37",
-    "vue-router": "4.1.2"
-  },
-  "devDependencies": {
-    "@types/node": "^18.0.6",
-    "@vitejs/plugin-vue": "^3.0.0",
-    "electron": "19.0.8",
-    "electron-builder": "23.1.0",
-    "typescript": "^4.6.4",
-    "unplugin-auto-import": "^0.9.3",
-    "unplugin-vue-components": "^0.21.1",
-    "vite": "^3.0.0",
-    "vite-plugin-electron": "0.7.5",
-    "vue-tsc": "^0.38.4"
-  }
+	"name": "electron-vue-vite-template",
+	"private": true,
+	"version": "0.0.0",
+	"author": "Jesse",
+	"main": "dist/electron/main/index.js",
+	"description": "Really simple electron + vue + vite boilerplate",
+	"scripts": {
+		"dev": "vite",
+		"build": "vue-tsc --noEmit && vite build && electron-builder",
+		"preview": "vite preview",
+		"prepare": "husky install"
+	},
+	"dependencies": {
+		"element-plus": "2.2.9",
+		"pinia": "2.0.16",
+		"vue": "3.2.37",
+		"vue-router": "4.1.2"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "17.0.3",
+		"@commitlint/config-conventional": "17.0.3",
+		"@ls-lint/ls-lint": "1.10.0",
+		"@types/node": "^18.0.6",
+		"@typescript-eslint/eslint-plugin": "4.29.0",
+		"@typescript-eslint/parser": "4.29.0",
+		"@vitejs/plugin-vue": "^3.0.0",
+		"electron": "19.0.8",
+		"electron-builder": "23.1.0",
+		"eslint": "7.32.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-simple-import-sort": "7.0.0",
+		"eslint-plugin-vue": "7.15.1",
+		"husky": "8.0.0",
+		"lint-staged": "13.0.3",
+		"prettier": "^2.7.1",
+		"stylelint": "13.13.1",
+		"stylelint-config-prettier": "8.0.2",
+		"stylelint-config-rational-order": "0.1.2",
+		"stylelint-prettier": "1.2.0",
+		"typescript": "^4.6.4",
+		"unplugin-auto-import": "^0.9.3",
+		"unplugin-vue-components": "^0.21.1",
+		"vite": "^3.0.0",
+		"vite-plugin-electron": "0.7.5",
+		"vue-tsc": "^0.38.4"
+	},
+	"lint-staged": {
+		"*.{vue,ts,js}": [
+			"prettier --write",
+			"eslint --fix",
+			"ls-lint"
+		],
+		"*.{vue,less,scss}": [
+			"prettier --write",
+			"stylelint --quiet --fix",
+			"ls-lint"
+		]
+	}
 }

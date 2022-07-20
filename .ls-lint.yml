@@ -1,0 +1,22 @@
+# 文件名及文件夹名命名规则
+ls:
+  src/renderer/src/components/*:
+    .dir: PascalCase # 组件文件夹名命名模式
+  src/renderer/src/views:
+    .dir: camelCase | snake_case
+  src/renderer/src/store:
+    .dir: camelCase | kebab-case
+  src/renderer/src/router:
+    .dir: camelCase | kebab-case | regex:^__.+$
+  src/renderer/src:
+    .ts: camelCase
+    .d.ts: camelCase | kebab-case
+ignore:
+  - .git
+  - .husky
+  - .vscode
+  - app
+  - dist
+  - release
+  - resources
+  - node_modules

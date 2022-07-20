@@ -1,0 +1,11 @@
+**/*.md
+**/*.svg
+**/*.css.d.ts
+**/*.less.d.ts
+package.json
+.git/**
+.husky/**
+.vscode/**
+dist/**
+release/**
+node_modules/**

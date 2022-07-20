@@ -1,0 +1,7 @@
+.git/**
+.husky/**
+.vscode/**
+dist/**
+release/**
+resources/**
+node_modules/**
