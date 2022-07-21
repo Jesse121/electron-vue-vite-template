@@ -1,29 +1,29 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
-import loginComponent from "@/views/login/login.vue";
 import homeComponent from "@/views/home/home.vue";
+import loginComponent from "@/views/login/login.vue";
 
 const routes: RouteRecordRaw[] = [
-  {
-    path: "/login",
-    name: "login",
-    meta: {
-      title: "登录",
-    },
-    component: loginComponent,
-  },
-  {
-    path: "/",
-    name: "home",
-    meta: {
-      title: "首页",
-    },
-    component: homeComponent,
-  },
+	{
+		path: "/login",
+		name: "login",
+		meta: {
+			title: "登录"
+		},
+		component: loginComponent
+	},
+	{
+		path: "/",
+		name: "home",
+		meta: {
+			title: "首页"
+		},
+		component: homeComponent
+	}
 ];
 const router = createRouter({
-  history: createWebHashHistory(),
-  routes,
+	history: createWebHistory(),
+	routes
 });
 
 export default router;
