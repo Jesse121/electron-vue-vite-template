@@ -1,7 +1,7 @@
 {
 	"name": "electron-vue-vite-template",
 	"private": true,
-	"version": "0.0.3",
+	"version": "0.0.1",
 	"author": "Jesse",
 	"main": "dist/electron/main/index.js",
 	"description": "Really simple electron + vue + vite boilerplate",
@@ -11,7 +11,7 @@
 		"build": "electron-builder",
 		"preview": "vite preview",
 		"prepare": "husky install",
-		"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+		"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
 		"preinstall": "npx only-allow yarn",
 		"postversion": "yarn changelog"
 	},
