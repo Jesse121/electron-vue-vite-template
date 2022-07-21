@@ -11,9 +11,8 @@
 		"build": "electron-builder",
 		"preview": "vite preview",
 		"prepare": "husky install",
-		"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
 		"preinstall": "npx only-allow yarn",
-		"postversion": "yarn changelog && git add CHANGELOG.md && git commit -m 'docs: update CHANGELOG.md'"
+		"postversion": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
 	},
 	"dependencies": {
 		"element-plus": "2.2.9",
