@@ -1,3 +1,7 @@
+## [0.0.7](https://192.168.137.5/yangdong/electron-vue-vite-template/compare/v0.0.6...v0.0.7) (2022-07-21)
+
+
+
 ## [0.0.6](https://192.168.137.5/yangdong/electron-vue-vite-template/compare/v0.0.5...v0.0.6) (2022-07-21)
 
 
