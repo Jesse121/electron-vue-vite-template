@@ -1,4 +1,5 @@
 import vue from "@vitejs/plugin-vue";
+import { rmSync } from "fs";
 import path from "path";
 import AutoImport from "unplugin-auto-import/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
@@ -7,6 +8,8 @@ import { defineConfig } from "vite";
 import electron from "vite-plugin-electron";
 
 const resolvePath = (dir: string) => path.join(__dirname, dir);
+
+rmSync("dist", { recursive: true, force: true });
 
 // https://vitejs.dev/config/
 export default defineConfig({
