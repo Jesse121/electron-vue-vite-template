@@ -12,7 +12,8 @@
 		"preview": "vite preview",
 		"prepare": "husky install",
 		"preinstall": "npx only-allow yarn",
-		"postversion": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+		"postversion": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+		"lint": "eslint src --fix --ext .vue,.ts,.tsx && stylelint \"src/**/*.{vue,css,less,scss}\" --quiet --fix"
 	},
 	"dependencies": {
 		"element-plus": "2.2.9",
@@ -25,8 +26,8 @@
 		"@commitlint/config-conventional": "17.0.3",
 		"@ls-lint/ls-lint": "1.10.0",
 		"@types/node": "^18.0.6",
-		"@typescript-eslint/eslint-plugin": "4.29.0",
-		"@typescript-eslint/parser": "4.29.0",
+		"@typescript-eslint/eslint-plugin": "5.30.7",
+		"@typescript-eslint/parser": "5.30.7",
 		"@vitejs/plugin-vue": "^3.0.0",
 		"conventional-changelog-cli": "2.2.2",
 		"electron": "19.0.8",
