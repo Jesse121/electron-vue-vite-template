@@ -1,15 +1,20 @@
 {
-	appId: "YourAppID",
+	appId: "com.electron.app",
+	productName: "ElecronApp", //项目名 这也是生成的exe文件的前缀名
+	copyright: "****", //版权信息
 	asar: true,
+	// 输出文件夹
 	directories: {
 		output: "release/${version}"
 	},
 	files: ["dist"],
 	mac: {
-		artifactName: "${productName}_${version}.${ext}",
-		target: ["dmg"]
+		icon: "resources/icons/mac/icon.icns",
+		target: ["dmg"],
+		artifactName: "${productName}_${version}.${ext}" // 输出包名格式
 	},
 	win: {
+		icon: "resources/icons/win/icon.ico",
 		target: [
 			{
 				target: "nsis",
@@ -20,8 +25,16 @@
 	},
 	nsis: {
 		oneClick: false, // 是否一键安装
+		allowElevation: true, // 允许请求提升。 如果为false，则用户必须使用提升的权限重新启动安装程序。
 		perMachine: false,
-		allowToChangeInstallationDirectory: true,
-		deleteAppDataOnUninstall: false
+		allowToChangeInstallationDirectory: true, // 允许修改安装目录
+		deleteAppDataOnUninstall: false, // 卸载是否删除appData
+		installerIcon: "./build/icons/aaa.ico", // 安装图标
+		uninstallerIcon: "./build/icons/bbb.ico", //卸载图标
+		installerHeaderIcon: "./build/icons/aaa.ico", // 安装时头部图标
+		createDesktopShortcut: true, // 创建桌面快捷方式
+		createStartMenuShortcut: true, // 创建开始菜单快捷方式
+		shortcutName: "electronApp", // 快捷方式名称
+		include: "./installer.nsh" // 包含的自定义nsis脚本。这里设置了默认安装路劲
 	}
 }
