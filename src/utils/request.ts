@@ -2,10 +2,7 @@ import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } f
 import { ElMessage } from "element-plus";
 import qs from "qs";
 
-import store from "@/store";
-import { getToken } from "@/utils/auth";
-
-// 配置新建一个 axios 实例
+// 创建一个 axios 实例
 const service: AxiosInstance = axios.create({
 	baseURL: "/",
 	timeout: 50000,
@@ -16,9 +13,7 @@ const service: AxiosInstance = axios.create({
 service.interceptors.request.use(
 	(config: AxiosRequestConfig) => {
 		if (!config.headers) return;
-		if (store.getters.token) {
-			config.headers.Token = getToken();
-		}
+
 		if (config.headers["Content-Type"] === "application/x-www-form-urlencoded") {
 			config.data = qs.stringify(config.data);
 		}
@@ -38,9 +33,6 @@ service.interceptors.response.use(
 		if (res.code && res.code !== 200) {
 			// `token` 过期或者账号已在别处登录
 			if (res.code === 401) {
-				store.dispatch("user/resetToken").then(() => {
-					location.reload();
-				});
 				return Promise.reject(res);
 			}
 

@@ -1,3 +1,4 @@
+import { viteCommonjs } from "@originjs/vite-plugin-commonjs";
 import vue from "@vitejs/plugin-vue";
 import { rmSync } from "fs";
 import path from "path";
@@ -6,6 +7,8 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import Components from "unplugin-vue-components/vite";
 import { defineConfig } from "vite";
 import electron from "vite-plugin-electron";
+
+import { svgBuilder } from "./src/utils/svgBuilder";
 
 const resolvePath = (dir: string) => path.join(__dirname, dir);
 
@@ -21,6 +24,8 @@ export default defineConfig({
 	},
 	plugins: [
 		vue(),
+		svgBuilder(resolvePath("./src/assets/svg/")),
+		viteCommonjs(),
 		electron({
 			main: {
 				entry: "electron/main/index.ts",
@@ -49,5 +54,28 @@ export default defineConfig({
 		Components({
 			resolvers: [ElementPlusResolver()]
 		})
-	]
+	],
+	css: {
+		preprocessorOptions: {
+			less: {
+				javascriptEnabled: true,
+				additionalData: `@import "${resolvePath("./src/styles/variables.less")}";`
+			}
+		},
+		postcss: {
+			plugins: [
+				// 移除打包element时的@charset警告
+				{
+					postcssPlugin: "internal:charset-removal",
+					AtRule: {
+						charset: atRule => {
+							if (atRule.name === "charset") {
+								atRule.remove();
+							}
+						}
+					}
+				}
+			]
+		}
+	}
 });

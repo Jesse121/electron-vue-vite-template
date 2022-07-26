@@ -1,5 +1,6 @@
 import { app, BrowserWindow } from "electron";
 
+import maxMinClose from "./modules/maxMinClose";
 import { loadVueDevtools } from "./utils/devtools";
 import createMainWin from "./windows/mainWin";
 import createUpdateWin from "./windows/updateWin";
@@ -19,6 +20,7 @@ class ElectronApp implements IElectronApp {
 		this.init().then(() => {
 			this.initMainWin();
 			this.initUpdateWin();
+			this.loadModules();
 
 			loadVueDevtools();
 		});
@@ -50,6 +52,12 @@ class ElectronApp implements IElectronApp {
 	 */
 	initUpdateWin() {
 		this.updateWin = createUpdateWin();
+	}
+	/**
+	 * 加载功能模块
+	 */
+	loadModules() {
+		maxMinClose();
 	}
 }
 

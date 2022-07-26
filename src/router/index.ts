@@ -1,10 +1,15 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 
+import Layout from "@/layout/layout.vue";
 import homeComponent from "@/views/home/home.vue";
 import loginComponent from "@/views/login/login.vue";
 import updateComponent from "@/views/update/update.vue";
 
 const routes: RouteRecordRaw[] = [
+	{
+		path: "/",
+		redirect: "/home"
+	},
 	{
 		path: "/login",
 		name: "login",
@@ -14,12 +19,19 @@ const routes: RouteRecordRaw[] = [
 		component: loginComponent
 	},
 	{
-		path: "/",
-		name: "home",
+		path: "/home",
+		component: Layout,
+		redirect: "/home/index",
 		meta: {
 			title: "首页"
 		},
-		component: homeComponent
+		children: [
+			{
+				path: "index",
+				name: "home",
+				component: homeComponent
+			}
+		]
 	},
 	{
 		path: "/update",

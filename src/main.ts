@@ -1,4 +1,4 @@
-import "./style.css";
+import "@/styles/index.less";
 import "normalize.css/normalize.css";
 import "element-plus/dist/index.css";
 
@@ -7,11 +7,13 @@ import zhCn from "element-plus/es/locale/lang/zh-cn";
 import { createPinia } from "pinia";
 import { createApp } from "vue";
 
+import SvgIcon from "@/components/SvgIcon/index.vue";
+
 import App from "./App.vue";
 import router from "./router";
-import { ipcRendererSend } from "./utils/ipcRender";
 
 const app = createApp(App);
+app.component("SvgIcon", SvgIcon);
 app.use(router);
 app.use(createPinia());
 app.use(ElementPlus, {
