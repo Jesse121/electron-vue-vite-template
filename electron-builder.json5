@@ -7,13 +7,14 @@
 	directories: {
 		output: "release/${version}"
 	},
-	files: ["dist"],
+	files: ["dist", "resources"], //需要打包的文件
 	mac: {
 		icon: "resources/icons/mac/icon.icns",
 		target: ["dmg"],
 		artifactName: "${productName}_${version}.${ext}" // 输出包名格式
 	},
 	win: {
+		requestedExecutionLevel: "requireAdministrator", // 管理员权限运行
 		icon: "resources/icons/win/icon.ico",
 		target: [
 			{
@@ -29,12 +30,17 @@
 		perMachine: false,
 		allowToChangeInstallationDirectory: true, // 允许修改安装目录
 		deleteAppDataOnUninstall: false, // 卸载是否删除appData
-		installerIcon: "./build/icons/aaa.ico", // 安装图标
-		uninstallerIcon: "./build/icons/bbb.ico", //卸载图标
-		installerHeaderIcon: "./build/icons/aaa.ico", // 安装时头部图标
+		installerIcon: "", // 安装程序图标
+		uninstallerIcon: "", //卸载程序图标
 		createDesktopShortcut: true, // 创建桌面快捷方式
 		createStartMenuShortcut: true, // 创建开始菜单快捷方式
 		shortcutName: "electronApp", // 快捷方式名称
 		include: "./installer.nsh" // 包含的自定义nsis脚本。这里设置了默认安装路劲
-	}
+	},
+	publish: [
+		{
+			provider: "generic",
+			url: "****" // 更新包发布地址
+		}
+	]
 }
