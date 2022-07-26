@@ -25,6 +25,11 @@ class ElectronApp implements IElectronApp {
 	}
 
 	init() {
+		// 只允许一个app 运行
+		if (!app.requestSingleInstanceLock()) {
+			app.quit();
+			process.exit(0);
+		}
 		app.on("window-all-closed", () => {
 			if (process.platform !== "darwin") {
 				app.quit();

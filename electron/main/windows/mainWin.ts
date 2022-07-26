@@ -10,10 +10,16 @@ const createMainWin = (): BrowserWindow => {
 		height: 600,
 		icon: getIcon(),
 		// 创建无边框窗口
-		// frame: false,
+		frame: false,
 		webPreferences: {
+			nodeIntegration: true, // 是否集成nodejs
+			contextIsolation: true, // 是否开启上下文隔离
 			preload: join(__dirname, "../preload/index.js")
 		}
+	});
+
+	win.webContents.on("did-finish-load", () => {
+		win?.webContents.send("main-process-message", new Date().toLocaleString());
 	});
 
 	if (app.isPackaged) {

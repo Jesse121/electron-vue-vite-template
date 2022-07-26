@@ -5,8 +5,5 @@ declare module "*.vue" {
 	const component: DefineComponent<{}, {}, any>;
 	export default component;
 }
-declare const versions: {
-	node: () => string;
-	chrome: () => string;
-	electron: () => string;
-};
+
+declare const ipcRenderer: import("electron").IpcRenderer;
