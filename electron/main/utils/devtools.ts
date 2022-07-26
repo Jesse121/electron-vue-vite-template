@@ -60,7 +60,6 @@ export function loadVueDevtools() {
 		.filter(Boolean)[0];
 
 	if (vueDevToolPath) {
-		console.log(`Vue DevTools Path:>> `, vueDevToolPath);
 		session.defaultSession.loadExtension(vueDevToolPath);
 	}
 }
