@@ -27,13 +27,13 @@ const increment = () => {
 	counter.increment();
 };
 
-// const shareObject = window.require("@electron/remote").getGlobal("shareObject");
-// console.log(shareObject);
-log.info("aaa");
-console.log(log);
-
+const localStorageContent = localStorage.getItem("electronUpdateWinId");
+let updateWinId = 0;
+if (localStorageContent) {
+	updateWinId = parseInt(localStorageContent);
+}
 const sendToUpdateWin = () => {
-	ipcRendererSendTo(2, "sendToUpdateWin", "这是来自主窗口的消息");
+	ipcRendererSendTo(updateWinId, "sendToUpdateWin", "这是来自主窗口的消息");
 };
 </script>
 

@@ -15,7 +15,12 @@ const createUpdateWin = () => {
 			preload: join(__dirname, "../preload/index.js")
 		}
 	});
-	console.log(win.id);
+
+	win.webContents.on("did-finish-load", () => {
+		// 利用localStorage存储win.id
+		win.webContents.executeJavaScript(`localStorage.setItem("electronUpdateWinId",${win.id})`);
+	});
+
 	let windowUrl;
 	if (app.isPackaged) {
 		windowUrl = "file://" + join(__dirname, "../../index.html");

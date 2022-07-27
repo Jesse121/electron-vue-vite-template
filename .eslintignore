@@ -5,3 +5,4 @@ dist/**
 release/**
 resources/**
 node_modules/**
+*.d.ts

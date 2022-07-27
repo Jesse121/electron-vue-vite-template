@@ -21,4 +21,4 @@ function withPrototype(obj: Record<string, any>) {
 }
 contextBridge.exposeInMainWorld("ipcRenderer", withPrototype(ipcRenderer));
 
-contextBridge.exposeInMainWorld("log", withPrototype(log));
+contextBridge.exposeInMainWorld("log", log);

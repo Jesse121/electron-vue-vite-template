@@ -1,11 +1,10 @@
-import remote from "@electron/remote/main";
 import { app, BrowserWindow } from "electron";
+import { url } from "inspector";
 import { join } from "path";
 
+import { shareObject } from "..";
 import { openDevTools } from "../utils/devtools";
 import { getIcon } from "../utils/icon";
-
-remote.initialize();
 
 const createMainWin = (): BrowserWindow => {
 	const win = new BrowserWindow({
@@ -22,10 +21,10 @@ const createMainWin = (): BrowserWindow => {
 	});
 
 	win.webContents.on("did-finish-load", () => {
+		// 利用localStorage存储win.id
+		win.webContents.executeJavaScript(`localStorage.setItem("electronMainWinId",${win.id})`);
 		win?.webContents.send("main-process-message", new Date().toLocaleString());
 	});
-
-	remote.enable(win.webContents);
 
 	if (app.isPackaged) {
 		win.loadFile(join(__dirname, "../../index.html"));
