@@ -49,7 +49,8 @@ export default defineConfig({
 			}
 		}),
 		AutoImport({
-			resolvers: [ElementPlusResolver()]
+			resolvers: [ElementPlusResolver()],
+			imports: ["vue"] // 自动导入vue3API
 		}),
 		Components({
 			resolvers: [ElementPlusResolver()]

@@ -46,3 +46,5 @@ export const ipcRendererOnce = (channel: string, listener: (event: IpcRendererEv
  */
 export const ipcRendererRemoveListener = (channel: string, listener: (...args: any[]) => void) =>
 	ipcRenderer.removeListener(channel, listener);
+
+export const log = (...params: any[]): Promise<boolean | null> => ipcRendererInvoke("log", ...params);

@@ -5,7 +5,12 @@ module.exports = {
 		node: true
 	}, //定义eslint依赖的插件
 	plugins: ["@typescript-eslint", "prettier", "simple-import-sort"], //定义文件继承的代码规范
-	extends: ["plugin:vue/vue3-essential", "plugin:vue/vue3-recommended", "plugin:prettier/recommended"],
+	extends: [
+		"plugin:vue/vue3-essential",
+		"plugin:vue/vue3-recommended",
+		"plugin:prettier/recommended",
+		"vue-global-api"
+	],
 	parserOptions: {
 		//解析ts文件
 		parser: "@typescript-eslint/parser",

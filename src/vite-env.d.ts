@@ -7,3 +7,6 @@ declare module "*.vue" {
 }
 
 declare const ipcRenderer: import("electron").IpcRenderer;
+declare const log: {
+	info: (name: string) => void;
+};

@@ -9,13 +9,13 @@ const createUpdateWin = () => {
 		width: 800,
 		height: 600,
 		frame: false,
-		show: false,
+		// show: false,
 		icon: getIcon(),
 		webPreferences: {
 			preload: join(__dirname, "../preload/index.js")
 		}
 	});
-
+	console.log(win.id);
 	let windowUrl;
 	if (app.isPackaged) {
 		windowUrl = "file://" + join(__dirname, "../../index.html");

@@ -6,9 +6,13 @@ import { loadVueDevtools } from "./utils/devtools";
 import log from "./utils/log";
 import createMainWin from "./windows/mainWin";
 import createUpdateWin from "./windows/updateWin";
-
 // 屏蔽不安全的协议http 提示
 process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
+
+global.shareObject = {
+	mainWinId: 0,
+	updateWinId: 0
+};
 
 export interface IElectronApp {
 	mainWin: BrowserWindow;

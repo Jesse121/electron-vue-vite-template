@@ -9,7 +9,7 @@ export const ipcMainHandle = <T>(
 	eventName: string,
 	listener: (event: IpcMainInvokeEvent, ...args: any[]) => Promise<T> | void | T
 ): void => {
-	ipcMain.handle(eventName, async (event, ...args: any[]) => {
+	ipcMain.handle(eventName, (event, ...args: any[]) => {
 		return listener(event, ...args);
 	});
 };

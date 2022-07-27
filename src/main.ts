@@ -1,6 +1,7 @@
 import "@/styles/index.less";
 import "normalize.css/normalize.css";
 import "element-plus/dist/index.css";
+import "vue-global-api";
 
 import ElementPlus from "element-plus";
 import zhCn from "element-plus/es/locale/lang/zh-cn";

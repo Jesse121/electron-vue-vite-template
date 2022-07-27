@@ -35,11 +35,18 @@ const routes: RouteRecordRaw[] = [
 	},
 	{
 		path: "/update",
-		name: "update",
+		component: Layout,
+		redirect: "/update/index",
 		meta: {
 			title: "更新"
 		},
-		component: updateComponent
+		children: [
+			{
+				path: "index",
+				name: "update",
+				component: updateComponent
+			}
+		]
 	}
 ];
 const router = createRouter({

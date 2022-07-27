@@ -1,8 +1,11 @@
+import remote from "@electron/remote/main";
 import { app, BrowserWindow } from "electron";
 import { join } from "path";
 
 import { openDevTools } from "../utils/devtools";
 import { getIcon } from "../utils/icon";
+
+remote.initialize();
 
 const createMainWin = (): BrowserWindow => {
 	const win = new BrowserWindow({
@@ -21,6 +24,8 @@ const createMainWin = (): BrowserWindow => {
 	win.webContents.on("did-finish-load", () => {
 		win?.webContents.send("main-process-message", new Date().toLocaleString());
 	});
+
+	remote.enable(win.webContents);
 
 	if (app.isPackaged) {
 		win.loadFile(join(__dirname, "../../index.html"));
