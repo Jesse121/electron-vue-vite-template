@@ -15,3 +15,5 @@ export const getIcon = () => {
 		return resolve("../../../resources/icons/png/256x256.png");
 	}
 };
+
+export const getLogout = () => resolve("../../../resources/logout.png");
