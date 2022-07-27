@@ -8,6 +8,7 @@ import log from "electron-log";
  * verbose,
  * debug,
  * silly
+ *
  * 日志文件位置
  * on Linux: ~/.config/{app name}/logs/{process type}.log
  * on macOS: ~/Library/Logs/{app name}/{process type}.log
@@ -18,5 +19,7 @@ let date = new Date();
 const dateStr = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
 // 修改日志文件名
 log.transports.file.fileName = dateStr + ".log";
+// 禁用console输出
+log.transports.console.level = false;
 
 export default log;
