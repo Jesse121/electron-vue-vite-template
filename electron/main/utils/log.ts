@@ -1,3 +1,4 @@
+import { app } from "electron";
 import log from "electron-log";
 
 /**
@@ -19,7 +20,10 @@ let date = new Date();
 const dateStr = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
 // 修改日志文件名
 log.transports.file.fileName = dateStr + ".log";
-// 禁用console输出
-log.transports.console.level = false;
+
+// 打包后禁用console输出
+if (app?.isPackaged) {
+	log.transports.console.level = false;
+}
 
 export default log;
