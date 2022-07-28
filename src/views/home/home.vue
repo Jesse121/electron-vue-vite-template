@@ -7,7 +7,6 @@
 </template>
 
 <script setup lang="ts">
-// import remote from "@electron/remote";
 import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 

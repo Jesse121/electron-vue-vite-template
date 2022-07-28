@@ -1,8 +1,6 @@
 import { app, BrowserWindow } from "electron";
-import { url } from "inspector";
 import { join } from "path";
 
-import { shareObject } from "..";
 import { openDevTools } from "../utils/devtools";
 import { getIcon } from "../utils/icon";
 

@@ -6,7 +6,7 @@ interface BaseRes<T = any> {
 	[k: string]: any;
 }
 
-export default async function sync<T = Omit<BaseRes, "result">>(p: Promise<T>): Promise<[Error | null, T?]> {
+export default async function sync<T = Omit<BaseRes, "result">>(p: Promise<T>): Promise<[unknown, T?]> {
 	try {
 		const d = await p;
 		return [null, d];
