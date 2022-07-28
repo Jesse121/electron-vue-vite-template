@@ -13,9 +13,6 @@ export const ipcMainHandle = <T>(
 		return listener(event, ...args);
 	});
 };
-/*
-on(channel: string, listener: (event: IpcMainEvent, ...args: any[]) => void): this;
-*/
 
 export const ipcMainOn = <T>(
 	channel: string,

@@ -31,6 +31,7 @@ let updateWinId = 0;
 if (localStorageContent) {
 	updateWinId = parseInt(localStorageContent);
 }
+
 const sendToUpdateWin = () => {
 	ipcRendererSendTo(updateWinId, "sendToUpdateWin", "这是来自主窗口的消息");
 };
