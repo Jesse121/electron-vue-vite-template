@@ -22,7 +22,7 @@ class ElectronApp implements IElectronApp {
 	constructor() {
 		this.init().then(() => {
 			this.initMainWin();
-			this.initUpdateWin();
+			// this.initUpdateWin();
 
 			this.loadModules();
 			loadVueDevtools();
