@@ -7,7 +7,7 @@ declare const log: {
 };
 
 declare const sqlite: {
-	db: any;
+	db: sqlite3.Database;
 	connect: (path: string) => Promise<unknown>;
 	get: (sql: string, params?: Object) => Promise<unknown>;
 	run: (sql: string, params?: Object) => Promise<unknown>;
