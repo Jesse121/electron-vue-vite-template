@@ -29,8 +29,7 @@ const createMainWin = (): BrowserWindow => {
 	} else {
 		const url = `http://${process.env["VITE_DEV_SERVER_HOST"]}:${process.env["VITE_DEV_SERVER_PORT"]}`;
 
-		win.loadURL(url);
-		win.on("show", () => openDevTools(win));
+		win.loadURL(url).finally(() => openDevTools(win));
 	}
 	return win;
 };

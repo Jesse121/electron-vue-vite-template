@@ -4,6 +4,7 @@ const sqlite = sqlite3.verbose();
 export interface ISqlite {
 	db: any;
 	connect: (path: string) => Promise<unknown>;
+	get: (sql: string, params: Object) => Promise<unknown>;
 	run: (sql: string, params: Object) => Promise<unknown>;
 	all: (sql: string, params: Object) => Promise<unknown>;
 }

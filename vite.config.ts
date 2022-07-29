@@ -42,7 +42,6 @@ export default defineConfig({
 				},
 				vite: {
 					build: {
-						sourcemap: "inline",
 						outDir: "dist/electron/preload"
 					}
 				}
