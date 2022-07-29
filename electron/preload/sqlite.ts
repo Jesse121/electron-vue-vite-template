@@ -1,4 +1,4 @@
-import sqlite3 from "sqlite3";
+import sqlite3, { RunResult } from "sqlite3";
 const sqlite = sqlite3.verbose();
 
 export interface ISqlite {
@@ -9,8 +9,8 @@ export interface ISqlite {
 }
 
 class Sqlite implements ISqlite {
-	static instance: any = null;
-	db: any = null;
+	static instance: ISqlite | null = null;
+	db: sqlite3.Database | null = null;
 
 	// 连接数据库
 	connect(path: string) {
@@ -28,11 +28,11 @@ class Sqlite implements ISqlite {
 	// 运行sql
 	run(sql: string, params = {}) {
 		return new Promise((resolve, reject) => {
-			this.db.run(sql, params, err => {
+			this.db?.run(sql, params, (result: RunResult, err: Error | null) => {
 				if (err) {
 					reject(err);
 				} else {
-					resolve(1);
+					resolve(result);
 				}
 			});
 		});
@@ -41,7 +41,7 @@ class Sqlite implements ISqlite {
 	// 运行多条sql
 	exec(sql: string) {
 		return new Promise((resolve, reject) => {
-			this.db.exec(sql, err => {
+			this.db?.exec(sql, err => {
 				if (err) {
 					reject(err);
 				} else {
@@ -54,11 +54,11 @@ class Sqlite implements ISqlite {
 	// 查询一条数据
 	get(sql: string, params = {}) {
 		return new Promise((resolve, reject) => {
-			this.db.get(sql, params, (err, data) => {
+			this.db?.get(sql, params, (result: RunResult, err: Error | null) => {
 				if (err) {
 					reject(err);
 				} else {
-					resolve(data);
+					resolve(result);
 				}
 			});
 		});
@@ -67,11 +67,11 @@ class Sqlite implements ISqlite {
 	// 查询所有数据
 	all(sql: string, params = {}) {
 		return new Promise((resolve, reject) => {
-			this.db.all(sql, params, (err, data) => {
+			this.db?.all(sql, params, (result: RunResult, err: Error | null) => {
 				if (err) {
 					reject(err);
 				} else {
-					resolve(data);
+					resolve(result);
 				}
 			});
 		});
@@ -79,7 +79,7 @@ class Sqlite implements ISqlite {
 
 	// 关闭数据库
 	close() {
-		this.db.close();
+		this.db?.close();
 	}
 
 	// 单例
