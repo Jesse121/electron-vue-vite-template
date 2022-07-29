@@ -2,7 +2,7 @@ import sqlite3, { RunResult } from "sqlite3";
 const sqlite = sqlite3.verbose();
 
 export interface ISqlite {
-	db: any;
+	db: sqlite3.Database | null;
 	connect: (path: string) => Promise<unknown>;
 	get: (sql: string, params: Object) => Promise<unknown>;
 	run: (sql: string, params: Object) => Promise<unknown>;
