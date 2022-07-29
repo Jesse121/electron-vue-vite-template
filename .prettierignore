@@ -1,7 +1,6 @@
 **/*.md
 **/*.svg
-**/*.css.d.ts
-**/*.less.d.ts
+**/*.d.ts
 package.json
 .git/**
 .husky/**
