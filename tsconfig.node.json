@@ -3,7 +3,8 @@
 		"composite": true,
 		"module": "ESNext",
 		"moduleResolution": "Node",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
 		"allowSyntheticDefaultImports": true
-	},
-	"include": []
+	}
 }
