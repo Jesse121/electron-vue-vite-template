@@ -1,4 +1,5 @@
 import { app, BrowserWindow } from "electron";
+import { autoUpdater } from "electron-updater";
 
 import createTray from "./modules/createTray";
 import handleDatabase from "./modules/database/handleDatabase";
@@ -25,6 +26,8 @@ class ElectronApp implements IElectronApp {
 			this.initMainWin();
 			// this.initUpdateWin();
 			// handleDatabase();
+
+			autoUpdater.checkForUpdatesAndNotify();
 
 			this.loadModules();
 			loadVueDevtools();

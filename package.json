@@ -42,6 +42,7 @@
 		"electron-builder": "23.1.0",
 		"electron-icon-builder": "^2.0.1",
 		"electron-log": "4.4.8",
+		"electron-updater": "5.0.1",
 		"eslint": "7.32.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-prettier": "^4.2.1",
