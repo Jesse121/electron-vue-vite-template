@@ -5,4 +5,4 @@ declare module "*.vue" {
 	const component: DefineComponent<{}, {}, any>;
 	export default component;
 }
-
+declare const ipcRenderer: import("electron").IpcRenderer;
