@@ -11,7 +11,7 @@ import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 
 import { useCounterStore } from "@/stores/counter";
-import { ipcRendererSendTo } from "@/utils/ipcRender";
+import { ipcRendererSendTo } from "@/utils/ipcRenderer";
 
 const router = useRouter();
 const goLogin = () => {

@@ -4,7 +4,7 @@
 </template>
 
 <script setup lang="ts">
-import { ipcRendererOn } from "@/utils/ipcRender";
+import { ipcRendererOn } from "@/utils/ipcRenderer";
 
 const content = ref("");
 ipcRendererOn("sendToUpdateWin", (event, args) => {

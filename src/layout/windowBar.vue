@@ -18,7 +18,7 @@
 import { ref } from "vue";
 import { useRoute } from "vue-router";
 
-import { ipcRendererInvoke, ipcRendererOn, ipcRendererSend } from "@/utils/ipcRender";
+import { ipcRendererInvoke, ipcRendererOn, ipcRendererSend } from "@/utils/ipcRenderer";
 
 const route = useRoute();
 

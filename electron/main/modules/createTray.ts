@@ -2,11 +2,10 @@ import { Menu, Tray } from "electron";
 import path from "path";
 
 import { IElectronApp } from "..";
-import { getIcon, getLogout } from "../utils/icon";
+import { getLogout } from "../utils/icon";
 
 let $tray: Tray | null = null;
 
-const initEvent = () => {};
 const setMenu = (electronApp: IElectronApp) => {
 	const menu = [
 		{
@@ -30,7 +29,6 @@ const createTray = (electronApp: IElectronApp) => {
 	$tray = new Tray(path.join(__dirname, "../../../resources/icons/png/256x256.png"));
 	// 设置鼠标悬浮时的标题
 	$tray.setToolTip("ElectronApp");
-	initEvent();
 	setMenu(electronApp);
 };
 
