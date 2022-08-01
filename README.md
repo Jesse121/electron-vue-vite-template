@@ -1,16 +1,51 @@
-# Vue 3 + TypeScript + Vite
+### electron项目模板
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+用于快速构建桌面客户端项目，包含基础功能如下：
 
-## Recommended IDE Setup
+1. 可开启多个窗口
+2. 可使用vue devtools方便调试
+3. 能生成本地运行日志文件
+4. 包含托盘和托盘菜单
+5. 一键打包成exe
+6. 本地化sqlite存储
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+主要目录结构如下：
+``` 
+|-- electron
+|   |-- main 
+|   |   |-- index.ts
+|   |   |-- modules // 功能模块
+|   |   |   |-- createTray.ts 
+|   |   |   `-- maxMinClose.ts
+|   |   |-- utils // 相关工具
+|   |   |   |-- devtools.ts   
+|   |   |   |-- icon.ts       
+|   |   |   |-- ipcMain.ts    
+|   |   |   |-- log.ts
+|   |   |   `-- sqlite.ts
+|   |   `-- windows // 创建窗口文件
+|   |       |-- mainWin.ts
+|   |       `-- updateWin.ts
+|   `-- preload  // 预加载脚本文件
+|       |-- index.ts
+|       `-- renderer.d.ts
+|-- electron-builder.json5 // electron-builder打包配置
+|-- installer.nsh // nisi脚本用于修改默认安装路径
+|-- resources // 项目图片资源
+|-- src //web项目文件夹
+```
 
-## Type Support For `.vue` Imports in TS
+启动项目 
+yarn dev
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+打包项目
+yarn build
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+
+
+详细构建过程可查看
+* [如何用Electron+vue+vite构建桌面端应用(一)](http://192.168.137.36:8090/pages/viewpage.action?pageId=55083243)
+* [如何用Electron+vue+vite构建桌面端应用(二)](http://192.168.137.36:8090/pages/viewpage.action?pageId=55083402)
+* [如何用Electron+vue+vite构建桌面端应用(三)](http://192.168.137.36:8090/pages/viewpage.action?pageId=55083587)
+
