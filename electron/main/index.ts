@@ -1,7 +1,6 @@
 import { app, BrowserWindow } from "electron";
 
 import createTray from "./modules/createTray";
-import handleDatabase from "./modules/database";
 import maxMinClose from "./modules/maxMinClose";
 import { loadVueDevtools } from "./utils/devtools";
 import log from "./utils/log";
@@ -23,7 +22,6 @@ class ElectronApp implements IElectronApp {
 	constructor() {
 		this.init().then(() => {
 			this.initMainWin();
-			handleDatabase();
 			// this.initUpdateWin();
 
 			this.loadModules();
