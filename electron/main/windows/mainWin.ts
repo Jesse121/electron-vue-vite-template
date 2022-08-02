@@ -1,8 +1,10 @@
 import { app, BrowserWindow } from "electron";
+import { autoUpdater } from "electron-updater";
 import { join } from "path";
 
 import { openDevTools } from "../utils/devtools";
 import { getIcon } from "../utils/icon";
+import { ipcMainOn } from "../utils/ipcMain";
 
 const createMainWin = (): BrowserWindow => {
 	const win = new BrowserWindow({
@@ -31,6 +33,13 @@ const createMainWin = (): BrowserWindow => {
 
 		win.loadURL(url).finally(() => openDevTools(win));
 	}
+
+	ipcMainOn("checkUpdate", () => {
+		if (app.isPackaged) {
+			autoUpdater.checkForUpdatesAndNotify();
+		}
+	});
+
 	return win;
 };
 
