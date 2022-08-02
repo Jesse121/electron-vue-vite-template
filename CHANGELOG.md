@@ -1,3 +1,12 @@
+# [2.0.0](https://192.168.137.5/yangdong/electron-template/compare/v1.0.0...v2.0.0) (2022-08-02)
+
+
+### Features
+
+* set perMachine true ([529a4fb](https://192.168.137.5/yangdong/electron-template/commits/529a4fb48b6c011d3f7e49eff0fe0e2d1a4dc943))
+
+
+
 # [1.0.0](https://192.168.137.5/yangdong/electron-template/compare/v0.0.8...v1.0.0) (2022-08-02)
 
 
