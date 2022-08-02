@@ -2,7 +2,7 @@
 	"appId": "com.electron.app",
 	"productName": "ElecronApp",
 	"copyright": "****",
-	"asar": true,
+	"asar": false,
 	"directories": {
 		"output": "release/${version}"
 	},
@@ -23,6 +23,7 @@
 		],
 		"artifactName": "${productName}_${version}.${ext}"
 	},
+	"afterPack": "./afterPack.ts",
 	"nsis": {
 		"oneClick": false,
 		"allowElevation": true,
