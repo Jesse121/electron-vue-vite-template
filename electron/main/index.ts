@@ -2,11 +2,13 @@ import { app, BrowserWindow } from "electron";
 
 import createTray from "./modules/createTray";
 import handleDatabase from "./modules/database/handleDatabase";
+import checkFullUpdate from "./modules/fullUpdate";
 import maxMinClose from "./modules/maxMinClose";
 import { loadVueDevtools } from "./utils/devtools";
 import log from "./utils/log";
 import createMainWin from "./windows/mainWin";
 import createOtherWin from "./windows/otherWin";
+
 // 屏蔽不安全的协议http 提示
 process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
 
@@ -24,6 +26,7 @@ class ElectronApp implements IElectronApp {
 		this.init().then(() => {
 			this.initMainWin();
 			this.initOtherWin();
+			this.initListenFullUpdate();
 			// handleDatabase();
 
 			this.loadModules();
@@ -71,6 +74,14 @@ class ElectronApp implements IElectronApp {
 	initOtherWin() {
 		this.otherWin = createOtherWin();
 	}
+
+	/**
+	 * 初始化监听全量根系
+	 */
+	initListenFullUpdate() {
+		checkFullUpdate(this.mainWin);
+	}
+
 	/**
 	 * 加载功能模块
 	 */

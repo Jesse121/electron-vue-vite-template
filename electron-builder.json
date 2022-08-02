@@ -1,0 +1,45 @@
+{
+	"appId": "com.electron.app",
+	"productName": "ElecronApp",
+	"copyright": "****",
+	"asar": true,
+	"directories": {
+		"output": "release/${version}"
+	},
+	"files": ["dist", "resources"],
+	"mac": {
+		"icon": "resources/icons/mac/icon.icns",
+		"target": ["dmg"],
+		"artifactName": "${productName}_${version}.${ext}"
+	},
+	"win": {
+		"requestedExecutionLevel": "requireAdministrator",
+		"icon": "resources/icons/win/icon.ico",
+		"target": [
+			{
+				"target": "nsis",
+				"arch": ["x64"]
+			}
+		],
+		"artifactName": "${productName}_${version}.${ext}"
+	},
+	"nsis": {
+		"oneClick": false,
+		"allowElevation": true,
+		"perMachine": false,
+		"allowToChangeInstallationDirectory": true,
+		"deleteAppDataOnUninstall": false,
+		"installerIcon": "",
+		"uninstallerIcon": "",
+		"createDesktopShortcut": true,
+		"createStartMenuShortcut": true,
+		"shortcutName": "electronApp",
+		"include": "./installer.nsh"
+	},
+	"publish": [
+		{
+			"provider": "generic",
+			"url": "http://127.0.0.1:3000/"
+		}
+	]
+}

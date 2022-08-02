@@ -21,7 +21,7 @@ import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 
 import { useCounterStore } from "@/stores/counter";
-import { ipcRendererSend, ipcRendererSendTo } from "@/utils/ipcRenderer";
+import { ipcRendererInvoke, ipcRendererSend, ipcRendererSendTo } from "@/utils/ipcRenderer";
 
 const router = useRouter();
 const goLogin = () => {
@@ -51,7 +51,11 @@ const sendToOtherWin = () => {
 };
 
 const checkUpdate = () => {
-	ipcRendererSend("checkUpdate");
+	ipcRendererInvoke("checkUpdate").then(res => {
+		if (res) {
+			router.push({ path: "/update" });
+		}
+	});
 };
 </script>
 
