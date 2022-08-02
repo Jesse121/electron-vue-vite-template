@@ -1,3 +1,12 @@
+# [1.0.0](https://192.168.137.5/yangdong/electron-template/compare/v0.0.8...v1.0.0) (2022-08-02)
+
+
+### Features
+
+* add fullUpdate ([5f27ac8](https://192.168.137.5/yangdong/electron-template/commits/5f27ac8178e8441be12f729d3968d16d1641f2fd))
+
+
+
 ## [0.0.8](https://192.168.137.5/yangdong/electron-template/compare/bedae8e96830d9af7b613bcfa365ac44027dcf87...v0.0.8) (2022-08-02)
 
 

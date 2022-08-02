@@ -12,7 +12,7 @@
 		"preview": "vite preview",
 		"prepare": "husky install",
 		"preinstall": "npx only-allow yarn",
-		"postversion": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+		"postversion": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md && git commit -m 'chore: update changelog' && git push",
 		"lint": "eslint src --fix --ext .vue,.ts,.tsx && stylelint \"src/**/*.{vue,css,less,scss}\" --quiet --fix"
 	},
 	"dependencies": {
