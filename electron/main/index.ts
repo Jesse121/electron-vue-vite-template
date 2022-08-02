@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, Tray } from "electron";
 
 import createTray from "./modules/createTray";
 import handleDatabase from "./modules/database/handleDatabase";
@@ -15,12 +15,14 @@ process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
 export interface IElectronApp {
 	mainWin: BrowserWindow;
 	otherWin: BrowserWindow;
+	tray: Tray;
 	showMainWin: () => void;
 	quit: () => void;
 }
 class ElectronApp implements IElectronApp {
 	mainWin: any = null;
 	otherWin: any = null;
+	tray: any = null;
 
 	constructor() {
 		this.init().then(() => {
@@ -33,6 +35,7 @@ class ElectronApp implements IElectronApp {
 			loadVueDevtools();
 		});
 	}
+	tary: Tray;
 
 	init() {
 		// 只允许一个app 运行
@@ -87,20 +90,20 @@ class ElectronApp implements IElectronApp {
 	 */
 	loadModules() {
 		// 最大化最小化关闭
-		maxMinClose(this);
+		maxMinClose();
 		// 创建托盘
-		createTray(this);
+		this.tray = createTray();
 	}
 	/**
 	 * 退出应用
 	 */
 	quit() {
 		log.info("app quit");
-		// if (this.mainTray && !this.mainTray.$tray.isDestroyed()) {
-		// 	this.mainTray.$tray.destroy();
-		// 	this.mainTray = null;
-		// 	log.info("quit----tray.destroy");
-		// }
+		if (this.tray && !this.tray.isDestroyed()) {
+			this.tray.destroy();
+			this.tray = null;
+			log.info("tray quit");
+		}
 
 		const windows = BrowserWindow.getAllWindows();
 		windows.forEach(item => item.destroy());
@@ -108,5 +111,6 @@ class ElectronApp implements IElectronApp {
 		app.quit();
 	}
 }
+const electronAppInstance = new ElectronApp();
 
-export default new ElectronApp();
+export default electronAppInstance;

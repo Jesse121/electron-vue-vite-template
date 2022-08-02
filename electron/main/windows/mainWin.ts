@@ -1,9 +1,11 @@
+import AdmZip from "adm-zip";
 import { app, BrowserWindow } from "electron";
 import { autoUpdater } from "electron-updater";
 import { join } from "path";
 
 import pkg from "../../../package.json";
-import { getAppVersion } from "../utils/common";
+import electronAppInstance from "..";
+import { getAppVersion, getRemoteZipToLocal, publishUrl } from "../utils/common";
 import { openDevTools } from "../utils/devtools";
 import { getIcon } from "../utils/icon";
 import { ipcMainHandle } from "../utils/ipcMain";
@@ -74,17 +76,17 @@ const createMainWin = (): BrowserWindow => {
 			win.center();
 			const localPath = join(app.getPath("exe"), "../resources/");
 			log.info("localPath", localPath);
-			// getRemoteFileToLocal(builderConfig.publish[0].url + "app.zip", "app.zip", "./", manThis.$mainWin)
-			// 	.then(res => {
-			// 		if (res) {
-			// 			const unzip = new AdmZip("app.zip");
-			// 			win.hide();
-			// 			unzip.extractAllTo(localPath, true, true);
-			// 			manThis.relaunch({ args: process.argv.slice(1).concat(["--relaunch"]) });
-			// 			manThis.quit();
-			// 		}
-			// 	})
-			// 	.catch(err => log.error(err));
+			getRemoteZipToLocal(publishUrl + "app.zip", "app.zip", "./", win)
+				.then(res => {
+					if (res) {
+						const unzip = new AdmZip("app.zip");
+						win.hide();
+						unzip.extractAllTo(localPath, true, true);
+						app.relaunch({ args: process.argv.slice(1).concat(["--relaunch"]) });
+						electronAppInstance.quit();
+					}
+				})
+				.catch(err => log.error(err));
 			return true;
 		}
 		return false;

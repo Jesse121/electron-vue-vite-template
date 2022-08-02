@@ -1,9 +1,9 @@
 import { app, BrowserWindow } from "electron";
 
-import { IElectronApp } from "..";
+import electronAppInstance, { IElectronApp } from "..";
 import { ipcMainHandle, ipcMainOn } from "../utils/ipcMain";
 
-export default (electronApp: IElectronApp) => {
+export default () => {
 	/**
 	 * 窗口最小化
 	 */
@@ -29,7 +29,7 @@ export default (electronApp: IElectronApp) => {
 	 */
 	ipcMainOn("close-win", (event, arg: { needClose: boolean }) => {
 		if (arg.needClose) {
-			electronApp.quit();
+			electronAppInstance.quit();
 		} else {
 			const win = BrowserWindow.fromId(event.sender.id);
 			win?.hide();
