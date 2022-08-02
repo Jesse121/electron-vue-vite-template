@@ -7,24 +7,24 @@ import maxMinClose from "./modules/maxMinClose";
 import { loadVueDevtools } from "./utils/devtools";
 import log from "./utils/log";
 import createMainWin from "./windows/mainWin";
-import createUpdateWin from "./windows/updateWin";
+import createOtherWin from "./windows/otherWin";
 // 屏蔽不安全的协议http 提示
 process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
 
 export interface IElectronApp {
 	mainWin: BrowserWindow;
-	updateWin: BrowserWindow;
+	otherWin: BrowserWindow;
 	showMainWin: () => void;
 	quit: () => void;
 }
 class ElectronApp implements IElectronApp {
 	mainWin: any = null;
-	updateWin: any = null;
+	otherWin: any = null;
 
 	constructor() {
 		this.init().then(() => {
 			this.initMainWin();
-			// this.initUpdateWin();
+			this.initOtherWin();
 			// handleDatabase();
 
 			autoUpdater.checkForUpdatesAndNotify();
@@ -69,10 +69,10 @@ class ElectronApp implements IElectronApp {
 	}
 
 	/**
-	 * 初始化更新窗口
+	 * 初始化其他窗口
 	 */
-	initUpdateWin() {
-		this.updateWin = createUpdateWin();
+	initOtherWin() {
+		this.otherWin = createOtherWin();
 	}
 	/**
 	 * 加载功能模块

@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Layout from "@/layout/layout.vue";
 import homeComponent from "@/views/home/home.vue";
 import loginComponent from "@/views/login/login.vue";
+import otherComponent from "@/views/other/other.vue";
 import updateComponent from "@/views/update/update.vue";
 
 const routes: RouteRecordRaw[] = [
@@ -30,6 +31,21 @@ const routes: RouteRecordRaw[] = [
 				path: "index",
 				name: "home",
 				component: homeComponent
+			}
+		]
+	},
+	{
+		path: "/other",
+		component: Layout,
+		redirect: "/other/index",
+		meta: {
+			title: "新开窗口"
+		},
+		children: [
+			{
+				path: "index",
+				name: "other",
+				component: otherComponent
 			}
 		]
 	},
