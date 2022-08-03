@@ -1,3 +1,12 @@
+## [2.0.2](https://192.168.137.5/yangdong/electron-template/compare/v2.0.1...v2.0.2) (2022-08-03)
+
+
+### Features
+
+* 改用异步路由 ([05ecc4d](https://192.168.137.5/yangdong/electron-template/commits/05ecc4d46d390074a3f8fdf492d6bce6679e7cb8))
+
+
+
 ## [2.0.1](https://192.168.137.5/yangdong/electron-template/compare/v2.0.0...v2.0.1) (2022-08-03)
 
 
