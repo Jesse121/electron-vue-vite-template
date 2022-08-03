@@ -1,3 +1,20 @@
+## [2.0.1](https://192.168.137.5/yangdong/electron-template/compare/v2.0.0...v2.0.1) (2022-08-03)
+
+
+### Bug Fixes
+
+* update window ([ecbd35b](https://192.168.137.5/yangdong/electron-template/commits/ecbd35bd67f36b67f8cc33c4d0e5dc3a5857e3cf))
+
+
+### Features
+
+* 减小增量更新包大小 ([0403f77](https://192.168.137.5/yangdong/electron-template/commits/0403f777c7e33e9252c11cf086ab620c61ba92b5))
+* 增量更新 ([0ee161c](https://192.168.137.5/yangdong/electron-template/commits/0ee161c6a6b6773201db262a08f359619afd45a2))
+* 增量更新 ([7d5fcbc](https://192.168.137.5/yangdong/electron-template/commits/7d5fcbc452070b08fe4efd809a2983e56af93842))
+* modified afterPack.ts ([fd22beb](https://192.168.137.5/yangdong/electron-template/commits/fd22beba90b08b998e3a950326dfa8fcc9faa038))
+
+
+
 # [2.0.0](https://192.168.137.5/yangdong/electron-template/compare/v1.0.0...v2.0.0) (2022-08-02)
 
 
