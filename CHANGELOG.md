@@ -1,3 +1,17 @@
+## [2.0.18](https://192.168.137.5/yangdong/electron-template/compare/v2.0.17...v2.0.18) (2022-08-03)
+
+
+### Bug Fixes
+
+* go to update ([d218fd9](https://192.168.137.5/yangdong/electron-template/commits/d218fd91d4aaecca93417db8b2f1ead704cdfcd6))
+
+
+### Features
+
+* use sync Component ([3f44340](https://192.168.137.5/yangdong/electron-template/commits/3f44340fa5b483fd903ea80924635a49650aceda))
+
+
+
 ## [2.0.17](https://192.168.137.5/yangdong/electron-template/compare/v2.0.16...v2.0.17) (2022-08-03)
 
 
