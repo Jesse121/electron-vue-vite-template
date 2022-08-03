@@ -51,23 +51,23 @@ const autoUpdate = async (win: BrowserWindow) => {
 				// 重新备份
 				fs.renameSync(localPath + "app", localPath + "app.back");
 			}
-			// getRemoteZipToLocal(publishUrl + "app.zip", "app.zip", localPath, win)
-			// 	.then(() => {
-			// 		log.info("app.zip download success");
-			// 		try {
-			// 			const unzip = new AdmZip(localPath + "app.zip");
-			// 			// win.hide();
-			// 			fs.mkdirSync(localPath + "app");
-			// 			unzip.extractAllTo(localPath + "app", true, true);
-			// 		} catch (error) {
-			// 			log.error("extractAllToError", error);
-			// 		}
-			// 		app.relaunch({ args: process.argv.slice(1).concat(["--relaunch"]) });
-			// 		electronAppInstance.quit();
-			// 	})
-			// 	.catch(err => {
-			// 		log.error("getRemoteZipToLocal", err);
-			// 	});
+			getRemoteZipToLocal(publishUrl + "app.zip", "app.zip", localPath, win)
+				.then(() => {
+					log.info("app.zip download success");
+					try {
+						const unzip = new AdmZip(localPath + "app.zip");
+						// win.hide();
+						fs.mkdirSync(localPath + "app");
+						unzip.extractAllTo(localPath + "app", true, true);
+					} catch (error) {
+						log.error("extractAllToError", error);
+					}
+					app.relaunch({ args: process.argv.slice(1).concat(["--relaunch"]) });
+					electronAppInstance.quit();
+				})
+				.catch(err => {
+					log.error("getRemoteZipToLocal", err);
+				});
 		} catch (error) {
 			log.error("partUpdateError", error);
 			if (fs.existsSync(localPath + "app.back")) {
