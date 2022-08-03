@@ -1,5 +1,5 @@
 import { app, BrowserWindow } from "electron";
-import { createWriteStream, unlink } from "fs";
+import { createWriteStream, existsSync, PathLike, readdirSync, statSync, unlink, unlinkSync } from "fs";
 import http from "http";
 import path, { join } from "path";
 import progress from "progress-stream";
@@ -79,7 +79,7 @@ export const getRemoteZipToLocal = (remoteUrl: string, fileName: string, localPa
 					})
 					.on("error", err => {
 						unlink(join(localPath, fileName), err => {
-							console.log(err);
+							reject(err);
 						});
 					});
 			})
@@ -88,4 +88,22 @@ export const getRemoteZipToLocal = (remoteUrl: string, fileName: string, localPa
 			})
 			.end();
 	});
+};
+/**
+ * 删除文件夹
+ * @param path
+ */
+export const deleteDirSync = (path: PathLike) => {
+	let files = [];
+	if (existsSync(path)) {
+		files = readdirSync(path);
+		files.forEach(file => {
+			const curPath = path + "/" + file;
+			if (statSync(curPath).isDirectory()) {
+				deleteDirSync(curPath);
+			} else {
+				unlinkSync(curPath);
+			}
+		});
+	}
 };
