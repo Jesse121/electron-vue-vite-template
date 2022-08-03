@@ -1,3 +1,17 @@
+## [2.0.17](https://192.168.137.5/yangdong/electron-template/compare/v2.0.16...v2.0.17) (2022-08-03)
+
+
+### Bug Fixes
+
+* tray icon ([ec9a75a](https://192.168.137.5/yangdong/electron-template/commits/ec9a75a965e172a63d8c559e1ed3d7defd34a366))
+
+
+### Features
+
+* test ([248fb07](https://192.168.137.5/yangdong/electron-template/commits/248fb07e4829d8195faf6d5d127a4c8b3d72eed9))
+
+
+
 ## [2.0.16](https://192.168.137.5/yangdong/electron-template/compare/v2.0.15...v2.0.16) (2022-08-03)
 
 
