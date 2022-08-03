@@ -1,3 +1,12 @@
+## [2.0.5](https://192.168.137.5/yangdong/electron-template/compare/v2.0.4...v2.0.5) (2022-08-03)
+
+
+### Features
+
+* extract ([43cac1d](https://192.168.137.5/yangdong/electron-template/commits/43cac1da360cc4a5e89031411b1d7427d6dc0e7a))
+
+
+
 ## [2.0.4](https://192.168.137.5/yangdong/electron-template/compare/v2.0.3...v2.0.4) (2022-08-03)
 
 
