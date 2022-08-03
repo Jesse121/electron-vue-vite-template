@@ -1,7 +1,6 @@
 import AdmZip from "adm-zip";
 import { app, BrowserWindow } from "electron";
 import { autoUpdater } from "electron-updater";
-import { fa } from "element-plus/es/locale";
 import fs from "fs";
 import { join } from "path";
 
@@ -62,7 +61,7 @@ const autoUpdate = async (win: BrowserWindow) => {
 			try {
 				const unzip = new AdmZip("app.zip");
 				win.hide();
-				unzip.extractAllTo(localPath, true, true);
+				unzip.extractAllTo(localPath + "app", true, true);
 			} catch (error) {
 				log.error("extractAllToError", error);
 			}
