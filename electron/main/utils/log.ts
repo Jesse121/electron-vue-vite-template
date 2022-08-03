@@ -20,6 +20,10 @@ let date = new Date();
 const dateStr = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
 // 修改日志文件名
 log.transports.file.fileName = dateStr + ".log";
+// 修改日志格式
+log.transports.file.format = "[{m}-{d} {h}:{i}:{s}.{ms}] [{level}]{scope} {text}";
+// 设置日志文件大小上限, 达到上限后备份文件并重命名未**.old.log,有且仅有一个备份文件
+log.transports.file.maxSize = 3 * 1024 * 1024;
 
 // 打包后禁用console输出
 if (app?.isPackaged) {
