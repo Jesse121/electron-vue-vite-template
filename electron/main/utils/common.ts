@@ -84,7 +84,7 @@ export const getRemoteZipToLocal = (remoteUrl: string, fileName: string, localPa
 					});
 			})
 			.on("error", e => {
-				log.error("getRemoteFileToLocal", e.message);
+				reject(e.message);
 			})
 			.end();
 	});

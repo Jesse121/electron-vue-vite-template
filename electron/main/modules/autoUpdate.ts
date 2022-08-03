@@ -1,6 +1,7 @@
 import AdmZip from "adm-zip";
 import { app, BrowserWindow } from "electron";
 import { autoUpdater } from "electron-updater";
+import { fa } from "element-plus/es/locale";
 import fs from "fs";
 import { join } from "path";
 
@@ -15,9 +16,8 @@ const autoUpdate = async (win: BrowserWindow) => {
 	if (process.platform !== "win32") return false;
 	const [err, res] = await sync(getAppVersion());
 	if (err) {
-		console.error(err);
-		log.error(err);
-		return;
+		log.error("getAppVersionError", err);
+		return false;
 	}
 	log.info("remoteVersion:", res);
 	log.info("currentVersion", pkg.version);
@@ -56,6 +56,7 @@ const autoUpdate = async (win: BrowserWindow) => {
 			}
 			const [err, res] = await sync(getRemoteZipToLocal(publishUrl + "app.zip", "app.zip", "./", win));
 			if (err) {
+				log.error("getRemoteZipToLocal", err);
 				return false;
 			}
 			try {
