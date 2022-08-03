@@ -52,7 +52,6 @@ const sendToOtherWin = () => {
 
 const checkUpdate = () => {
 	ipcRendererInvoke("checkUpdate").then(res => {
-		log.info("v", res);
 		if (res) {
 			router.push({ path: "/update" });
 		}
