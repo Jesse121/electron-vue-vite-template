@@ -3,6 +3,7 @@ import { app, BrowserWindow } from "electron";
 import { autoUpdater } from "electron-updater";
 import fs from "fs";
 import { join } from "path";
+import { platform } from "process";
 
 import pkg from "../../../package.json";
 import electronAppInstance from "..";
@@ -41,7 +42,8 @@ const autoUpdate = async (win: BrowserWindow) => {
 		win.setMinimumSize(420, 170);
 		win.setSize(420, 170, false);
 		win.center();
-		const localPath = join(app.getPath("exe"), "../Resources/");
+		const targetPath = platform === "darwin" ? "../../Resources/" : "../resources/";
+		const localPath = join(app.getPath("exe"), targetPath);
 		log.info("localPath", localPath);
 		try {
 			if (fs.existsSync(localPath + "app.back")) {

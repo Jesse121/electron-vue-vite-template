@@ -35,7 +35,6 @@ class ElectronApp implements IElectronApp {
 			loadVueDevtools();
 		});
 	}
-	tary: Tray;
 
 	init() {
 		// 只允许一个app 运行
