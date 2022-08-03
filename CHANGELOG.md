@@ -1,3 +1,12 @@
+## [2.0.12](https://192.168.137.5/yangdong/electron-template/compare/v2.0.11...v2.0.12) (2022-08-03)
+
+
+### Bug Fixes
+
+* rmdirSync ([fc6f70d](https://192.168.137.5/yangdong/electron-template/commits/fc6f70d0b058563cefeb93c5b3cce9351f800d8d))
+
+
+
 ## [2.0.11](https://192.168.137.5/yangdong/electron-template/compare/v2.0.10...v2.0.11) (2022-08-03)
 
 
