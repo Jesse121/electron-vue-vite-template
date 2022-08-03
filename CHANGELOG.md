@@ -1,3 +1,15 @@
+## [2.0.3](https://192.168.137.5/yangdong/electron-template/compare/v2.0.2...v2.0.3) (2022-08-03)
+
+
+### Features
+
+* app.zip remove progress-stream ([9d2fec6](https://192.168.137.5/yangdong/electron-template/commits/9d2fec61af75d785ac43f9ebb8874bcfd416f6b5))
+* extract autoUpdate Function ([4620f0d](https://192.168.137.5/yangdong/electron-template/commits/4620f0de6997da65d1534a31c42076cb3f030cf9))
+* partUpdate ([3f770fc](https://192.168.137.5/yangdong/electron-template/commits/3f770fcf8fe8262054132d5360164deeab52df29))
+* use back ([d7c1ec7](https://192.168.137.5/yangdong/electron-template/commits/d7c1ec754a24e52e1e1d795cb2267320049d7624))
+
+
+
 ## [2.0.2](https://192.168.137.5/yangdong/electron-template/compare/v2.0.1...v2.0.2) (2022-08-03)
 
 
