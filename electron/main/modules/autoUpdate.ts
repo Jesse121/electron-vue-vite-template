@@ -53,6 +53,7 @@ const autoUpdate = async (win: BrowserWindow) => {
 			}
 			getRemoteZipToLocal(publishUrl + "app.zip", "app.zip", localPath, win)
 				.then(() => {
+					log.info("app.zip download success");
 					try {
 						const unzip = new AdmZip(localPath + "app.zip");
 						// win.hide();
