@@ -12,7 +12,6 @@ import sync from "../utils/sync";
 
 const autoUpdate = async (win: BrowserWindow) => {
 	if (!app.isPackaged) return false;
-	if (process.platform !== "win32") return false;
 	const [err, res] = await sync(getAppVersion());
 	if (err) {
 		log.error("getAppVersionError", err);
@@ -53,21 +52,22 @@ const autoUpdate = async (win: BrowserWindow) => {
 				// 重新备份
 				fs.renameSync(localPath + "app", localPath + "app.back");
 			}
-			const [err, res] = await sync(getRemoteZipToLocal(publishUrl + "app.zip", "app.zip", localPath, win));
-			if (err) {
-				log.error("getRemoteZipToLocal", err);
-				return false;
-			}
-			try {
-				const unzip = new AdmZip(localPath + "app.zip");
-				// win.hide();
-				fs.mkdirSync(localPath + "app");
-				unzip.extractAllTo(localPath + "app", true, true);
-			} catch (error) {
-				log.error("extractAllToError", error);
-			}
-			app.relaunch({ args: process.argv.slice(1).concat(["--relaunch"]) });
-			electronAppInstance.quit();
+			getRemoteZipToLocal(publishUrl + "app.zip", "app.zip", localPath, win)
+				.then(() => {
+					try {
+						const unzip = new AdmZip(localPath + "app.zip");
+						// win.hide();
+						fs.mkdirSync(localPath + "app");
+						unzip.extractAllTo(localPath + "app", true, true);
+					} catch (error) {
+						log.error("extractAllToError", error);
+					}
+					app.relaunch({ args: process.argv.slice(1).concat(["--relaunch"]) });
+					electronAppInstance.quit();
+				})
+				.catch(err => {
+					log.error("getRemoteZipToLocal", err);
+				});
 		} catch (error) {
 			log.error("partUpdateError", error);
 			if (fs.existsSync(localPath + "app.back")) {
