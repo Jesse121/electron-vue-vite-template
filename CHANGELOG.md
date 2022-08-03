@@ -1,3 +1,12 @@
+## [2.0.16](https://192.168.137.5/yangdong/electron-template/compare/v2.0.15...v2.0.16) (2022-08-03)
+
+
+### Features
+
+* add download success ([6aac61c](https://192.168.137.5/yangdong/electron-template/commits/6aac61ca5b9969143cd851f69ca2c4e1ee719a50))
+
+
+
 ## [2.0.15](https://192.168.137.5/yangdong/electron-template/compare/v2.0.14...v2.0.15) (2022-08-03)
 
 
