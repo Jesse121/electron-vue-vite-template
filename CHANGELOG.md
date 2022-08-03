@@ -1,3 +1,18 @@
+## [2.0.4](https://192.168.137.5/yangdong/electron-template/compare/v2.0.3...v2.0.4) (2022-08-03)
+
+
+### Bug Fixes
+
+* modified log format ([83846d9](https://192.168.137.5/yangdong/electron-template/commits/83846d9f49a671e8d6eace005ae316ded9e0166c))
+* partUpdate ([f5e9fa1](https://192.168.137.5/yangdong/electron-template/commits/f5e9fa11b7f31ba52d7811b32d64bd93085d2041))
+
+
+### Features
+
+* test ([d399b79](https://192.168.137.5/yangdong/electron-template/commits/d399b79b083aebe692064fa6ef25bbe66c387535))
+
+
+
 ## [2.0.3](https://192.168.137.5/yangdong/electron-template/compare/v2.0.2...v2.0.3) (2022-08-03)
 
 
