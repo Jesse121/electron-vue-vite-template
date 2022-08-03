@@ -53,14 +53,15 @@ const autoUpdate = async (win: BrowserWindow) => {
 				// 重新备份
 				fs.renameSync(localPath + "app", localPath + "app.back");
 			}
-			const [err, res] = await sync(getRemoteZipToLocal(publishUrl + "app.zip", "app.zip", "./", win));
+			const [err, res] = await sync(getRemoteZipToLocal(publishUrl + "app.zip", "app.zip", localPath, win));
 			if (err) {
 				log.error("getRemoteZipToLocal", err);
 				return false;
 			}
 			try {
-				const unzip = new AdmZip("app.zip");
-				win.hide();
+				const unzip = new AdmZip(localPath + "app.zip");
+				// win.hide();
+				fs.mkdirSync(localPath + "app");
 				unzip.extractAllTo(localPath + "app", true, true);
 			} catch (error) {
 				log.error("extractAllToError", error);
