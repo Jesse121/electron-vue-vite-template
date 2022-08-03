@@ -8,15 +8,10 @@ const afterPack = context => {
 	} else {
 		targetPath = path.join(context.appOutDir, "./resources");
 	}
-	const unpackedDist = path.join(targetPath, "./app/dist");
-	const unpackedResources = path.join(targetPath, "./app/resources");
-	const unpackedNodeModule = path.join(targetPath, "./app/node_modules");
-	const unpackedPackage = path.join(targetPath, "./app/package.json");
+	const unpackedApp = path.join(targetPath, "./app");
 	var zip = new AdmZip();
-	zip.addLocalFolder(unpackedDist);
-	zip.addLocalFolder(unpackedResources);
-	zip.addLocalFolder(unpackedNodeModule);
-	zip.addLocalFile(unpackedPackage);
+	zip.addLocalFolder(unpackedApp);
+	zip.deleteFile("node_modules/sqlite3/"); // 排除sqlite3
 	zip.writeZip(path.join(context.outDir, "app.zip"));
 };
 
