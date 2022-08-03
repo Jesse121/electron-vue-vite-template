@@ -2,10 +2,10 @@ import { app, BrowserWindow } from "electron";
 import { createWriteStream, existsSync, PathLike, readdirSync, statSync, unlink, unlinkSync } from "fs";
 import http from "http";
 import path, { join } from "path";
+import { platform } from "process";
 import progress from "progress-stream";
 
 import builderConfig from "../../../electron-builder.json";
-import log from "./log";
 
 export const publishUrl = builderConfig.publish[0].url;
 
@@ -19,7 +19,8 @@ export const pathJoin = (...p: string[]): string => path.join(...p);
  */
 export const getAppVersion = (): Promise<string> =>
 	new Promise((resolve, reject) => {
-		const req = http.get(publishUrl + "latest.yml", req => {
+		const latest = platform === "win32" ? "latest.yml" : platform === "darwin" ? "latest-mac.yml" : "latest-linux.yml";
+		const req = http.get(publishUrl + latest, req => {
 			let detail = "";
 			req.setEncoding("utf-8");
 			req.on("data", chunk => {

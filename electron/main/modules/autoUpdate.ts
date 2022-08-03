@@ -41,7 +41,7 @@ const autoUpdate = async (win: BrowserWindow) => {
 		win.setMinimumSize(420, 170);
 		win.setSize(420, 170, false);
 		win.center();
-		const localPath = join(app.getPath("exe"), "../resources/");
+		const localPath = join(app.getPath("exe"), "../Resources/");
 		log.info("localPath", localPath);
 		try {
 			if (fs.existsSync(localPath + "app.back")) {
