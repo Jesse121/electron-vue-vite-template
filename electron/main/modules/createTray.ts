@@ -26,7 +26,7 @@ const setMenu = (electronApp: IElectronApp) => {
 
 const createTray = () => {
 	// 生成托盘图标及其菜单项实例
-	$tray = new Tray(path.join(__dirname, "../../../resources/icons/png/256x256.png"));
+	$tray = new Tray(path.join(__dirname, "../../../resources/icons/png/16x16.png"));
 	// 设置鼠标悬浮时的标题
 	$tray.setToolTip("ElectronApp");
 	setMenu(electronAppInstance);
