@@ -1,3 +1,12 @@
+## [2.0.7](https://192.168.137.5/yangdong/electron-template/compare/v2.0.6...v2.0.7) (2022-08-03)
+
+
+### Features
+
+* adaptation for mac ([69ae35a](https://192.168.137.5/yangdong/electron-template/commits/69ae35a97a9c2d9a04cb935fd775cc16dfda06a3))
+
+
+
 ## [2.0.6](https://192.168.137.5/yangdong/electron-template/compare/bedae8e96830d9af7b613bcfa365ac44027dcf87...v2.0.6) (2022-08-03)
 
 
