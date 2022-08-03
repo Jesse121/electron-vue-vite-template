@@ -39,7 +39,9 @@ const createMainWin = (): BrowserWindow => {
 	 * 检查更新
 	 */
 	ipcMainHandle("checkUpdate", async () => {
-		return await autoUpdate(win);
+		const res = await autoUpdate(win);
+		log.error(res);
+		return res;
 	});
 
 	return win;
