@@ -1,3 +1,7 @@
+## [2.0.10](https://192.168.137.5/yangdong/electron-template/compare/v2.0.9...v2.0.10) (2022-08-03)
+
+
+
 ## [2.0.9](https://192.168.137.5/yangdong/electron-template/compare/v2.0.8...v2.0.9) (2022-08-03)
 
 
