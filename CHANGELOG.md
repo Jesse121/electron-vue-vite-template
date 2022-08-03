@@ -1,3 +1,12 @@
+## [2.0.11](https://192.168.137.5/yangdong/electron-template/compare/v2.0.10...v2.0.11) (2022-08-03)
+
+
+### Features
+
+* autoUpdate result ([8b5c549](https://192.168.137.5/yangdong/electron-template/commits/8b5c54918b336948ec8ee3f46280b55d9dab9c6f))
+
+
+
 ## [2.0.10](https://192.168.137.5/yangdong/electron-template/compare/v2.0.9...v2.0.10) (2022-08-03)
 
 
