@@ -1,3 +1,12 @@
+## [2.0.15](https://192.168.137.5/yangdong/electron-template/compare/v2.0.14...v2.0.15) (2022-08-03)
+
+
+### Bug Fixes
+
+* go update ([9a3fa45](https://192.168.137.5/yangdong/electron-template/commits/9a3fa45365399fab2c18ef1795827c3e8ebcb1aa))
+
+
+
 ## [2.0.14](https://192.168.137.5/yangdong/electron-template/compare/v2.0.13...v2.0.14) (2022-08-03)
 
 
