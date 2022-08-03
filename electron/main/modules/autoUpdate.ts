@@ -69,6 +69,10 @@ const autoUpdate = async (win: BrowserWindow) => {
 			electronAppInstance.quit();
 		} catch (error) {
 			log.error("partUpdateError", error);
+			if (fs.existsSync(localPath + "app.back")) {
+				// 使用备份
+				fs.renameSync(localPath + "app.back", localPath + "app");
+			}
 		}
 		return true;
 	}
