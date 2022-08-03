@@ -39,9 +39,6 @@ const autoUpdate = async (win: BrowserWindow) => {
 		Number(remoteVersionArr[2]) > Number(currentVersionArr[2])
 	) {
 		// 开启增量更新
-		win.setMinimumSize(420, 170);
-		win.setSize(420, 170, false);
-		win.center();
 		const targetPath = platform === "darwin" ? "../../Resources/" : "../resources/";
 		const localPath = join(app.getPath("exe"), targetPath);
 		log.info("localPath", localPath);
@@ -77,6 +74,9 @@ const autoUpdate = async (win: BrowserWindow) => {
 				fs.renameSync(localPath + "app.back", localPath + "app");
 			}
 		}
+		win.setMinimumSize(420, 170);
+		win.setSize(420, 170, false);
+		win.center();
 		return true;
 	}
 };

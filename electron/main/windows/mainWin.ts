@@ -5,6 +5,7 @@ import autoUpdate from "../modules/autoUpdate";
 import { openDevTools } from "../utils/devtools";
 import { getIcon } from "../utils/icon";
 import { ipcMainHandle } from "../utils/ipcMain";
+import log from "../utils/log";
 
 const createMainWin = (): BrowserWindow => {
 	const win = new BrowserWindow({
@@ -37,8 +38,10 @@ const createMainWin = (): BrowserWindow => {
 	/**
 	 * 检查更新
 	 */
-	ipcMainHandle("checkUpdate", () => {
-		return autoUpdate(win);
+	ipcMainHandle("checkUpdate", async () => {
+		const res = await autoUpdate(win);
+		log.info(res);
+		return res;
 	});
 
 	return win;
