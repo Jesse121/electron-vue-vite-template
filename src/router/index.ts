@@ -3,8 +3,6 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Layout from "@/layout/layout.vue";
 import homeComponent from "@/views/home/home.vue";
 import loginComponent from "@/views/login/login.vue";
-import otherComponent from "@/views/other/other.vue";
-import updateComponent from "@/views/update/update.vue";
 
 const routes: RouteRecordRaw[] = [
 	{
@@ -45,14 +43,14 @@ const routes: RouteRecordRaw[] = [
 			{
 				path: "index",
 				name: "other",
-				component: otherComponent
+				component: () => import("@/views/other/other.vue")
 			}
 		]
 	},
 	{
 		// 更新窗口
 		path: "/update",
-		component: updateComponent
+		component: () => import("@/views/update/update.vue")
 	}
 ];
 const router = createRouter({
