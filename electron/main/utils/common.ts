@@ -1,5 +1,5 @@
 import { app, BrowserWindow } from "electron";
-import { createWriteStream, existsSync, PathLike, readdirSync, statSync, unlink, unlinkSync } from "fs";
+import { createWriteStream, existsSync, PathLike, readdirSync, rmdirSync, statSync, unlink, unlinkSync } from "fs";
 import http from "http";
 import path, { join } from "path";
 import { platform } from "process";
@@ -106,5 +106,6 @@ export const deleteDirSync = (path: PathLike) => {
 				unlinkSync(curPath);
 			}
 		});
+		rmdirSync(path);
 	}
 };
