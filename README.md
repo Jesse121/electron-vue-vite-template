@@ -30,7 +30,7 @@
 |   `-- preload  // 预加载脚本文件
 |       |-- index.ts
 |       `-- renderer.d.ts
-|-- electron-builder.json5 // electron-builder打包配置
+|-- electron-builder.json // electron-builder打包配置
 |-- installer.nsh // nisi脚本用于修改默认安装路径
 |-- resources // 项目图片资源
 |-- src //web项目文件夹
