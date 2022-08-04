@@ -42,38 +42,23 @@ const autoUpdate = async (win: BrowserWindow) => {
 		const targetPath = platform === "darwin" ? "../../Resources/" : "../resources/";
 		const localPath = join(app.getPath("exe"), targetPath);
 		log.info("localPath", localPath);
-		try {
-			if (fs.existsSync(localPath + "app.back")) {
-				// 删除旧备份
-				deleteDirSync(localPath + "app.back");
-			}
-			if (fs.existsSync(localPath + "app")) {
-				// 重新备份
-				fs.renameSync(localPath + "app", localPath + "app.back");
-			}
-			getRemoteZipToLocal(publishUrl + "app.zip", "app.zip", localPath, win)
-				.then(() => {
-					log.info("app.zip download success");
-					try {
-						const unzip = new AdmZip(localPath + "app.zip");
-						fs.mkdirSync(localPath + "app");
-						unzip.extractAllTo(localPath + "app", true, true);
-					} catch (error) {
-						log.error("extractAllToError", error);
-					}
-					app.relaunch({ args: process.argv.slice(1).concat(["--relaunch"]) });
-					electronAppInstance.quit();
-				})
-				.catch(err => {
-					log.error("getRemoteZipToLocal", err);
-				});
-		} catch (error) {
-			log.error("partUpdateError", error);
-			if (fs.existsSync(localPath + "app.back")) {
-				// 使用备份
-				fs.renameSync(localPath + "app.back", localPath + "app");
-			}
-		}
+		getRemoteZipToLocal(publishUrl + "app.zip", "app.zip", localPath, win)
+			.then(() => {
+				log.info("app.zip download success");
+				try {
+					const unzip = new AdmZip(localPath + "app.zip");
+					fs.mkdirSync(localPath + "app");
+					unzip.extractAllTo(localPath + "app", true, true);
+				} catch (error) {
+					log.error("extractAllToError", error);
+				}
+				app.relaunch({ args: process.argv.slice(1).concat(["--relaunch"]) });
+				electronAppInstance.quit();
+			})
+			.catch(err => {
+				log.error("getRemoteZipToLocal", err);
+			});
+
 		win.setMinimumSize(420, 170);
 		win.setSize(420, 170, false);
 		win.center();
