@@ -1,3 +1,12 @@
+## [2.0.21](https://192.168.137.5/yangdong/electron-template/compare/v2.0.20...v2.0.21) (2022-08-04)
+
+
+### Bug Fixes
+
+* remove back ([ce2c1e6](https://192.168.137.5/yangdong/electron-template/commits/ce2c1e6fec2d7c8eea78a5ee2c9f756eec28ffcb))
+
+
+
 ## [2.0.20](https://192.168.137.5/yangdong/electron-template/compare/v2.0.5...v2.0.20) (2022-08-04)
 
 
