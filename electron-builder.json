@@ -23,7 +23,7 @@
 		],
 		"artifactName": "${productName}_${version}.${ext}"
 	},
-	"afterPack": "./afterPack.ts",
+	"afterPack": "./afterPackHook.ts",
 	"nsis": {
 		"oneClick": false,
 		"allowElevation": true,
