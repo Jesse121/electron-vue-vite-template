@@ -27,15 +27,15 @@
 	"nsis": {
 		"oneClick": false,
 		"allowElevation": true,
-		"perMachine": true,
+		"perMachine": false,
 		"allowToChangeInstallationDirectory": true,
 		"deleteAppDataOnUninstall": false,
 		"installerIcon": "",
 		"uninstallerIcon": "",
 		"createDesktopShortcut": true,
 		"createStartMenuShortcut": true,
-		"shortcutName": "electronApp",
-		"include": "./installer.nsh"
+		"runAfterFinish": true,
+		"shortcutName": "electronApp"
 	},
 	"publish": [
 		{
