@@ -1,3 +1,13 @@
+## [2.0.19](https://192.168.137.5/yangdong/electron-template/compare/v2.0.18...v2.0.19) (2022-08-04)
+
+
+### Features
+
+* remove comment ([88f5895](https://192.168.137.5/yangdong/electron-template/commits/88f58951081c2de8ad67f2b0e80710b2740e502f))
+* remove log ([bd8cfff](https://192.168.137.5/yangdong/electron-template/commits/bd8cfffa9af586e725139a43e47c4f845a88cf48))
+
+
+
 ## [2.0.18](https://192.168.137.5/yangdong/electron-template/compare/v2.0.17...v2.0.18) (2022-08-03)
 
 
