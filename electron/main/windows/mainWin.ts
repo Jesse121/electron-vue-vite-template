@@ -5,7 +5,6 @@ import autoUpdate from "../modules/autoUpdate";
 import { openDevTools } from "../utils/devtools";
 import { getIcon } from "../utils/icon";
 import { ipcMainHandle } from "../utils/ipcMain";
-import log from "../utils/log";
 
 const createMainWin = (): BrowserWindow => {
 	const win = new BrowserWindow({

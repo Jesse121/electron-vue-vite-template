@@ -56,7 +56,6 @@ const autoUpdate = async (win: BrowserWindow) => {
 					log.info("app.zip download success");
 					try {
 						const unzip = new AdmZip(localPath + "app.zip");
-						// win.hide();
 						fs.mkdirSync(localPath + "app");
 						unzip.extractAllTo(localPath + "app", true, true);
 					} catch (error) {
