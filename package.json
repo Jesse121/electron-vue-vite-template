@@ -1,7 +1,7 @@
 {
 	"name": "electron-template",
 	"private": true,
-	"version": "2.0.18",
+	"version": "2.0.19",
 	"author": "Jesse",
 	"main": "dist/electron/main/index.js",
 	"description": "Really simple electron + vue + vite boilerplate",
