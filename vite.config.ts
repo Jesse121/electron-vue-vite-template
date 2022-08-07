@@ -20,6 +20,7 @@ export default defineConfig({
 		extensions: [".ts", ".tsx", ".js", ".json"],
 		alias: {
 			"@": resolvePath("./src")
+			// vue: "https://esm.sh/vue@3.2.37"
 		}
 	},
 	plugins: [

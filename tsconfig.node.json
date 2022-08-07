@@ -6,5 +6,5 @@
 		"moduleResolution": "Node",
 		"allowSyntheticDefaultImports": true
 	},
-	"include": ["electron/**/*.ts", "vite.config.ts", "package.json", "electron-builder.json"]
+	"include": ["electron/**/*.ts", "package.json", "electron-builder.json"]
 }
