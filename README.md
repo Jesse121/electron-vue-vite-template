@@ -46,7 +46,7 @@ yarn build
 
 
 详细构建过程可查看
-* [如何用Electron+vue+vite构建桌面端应用(一)](http://192.168.137.36:8090/pages/viewpage.action?pageId=55083243)
-* [如何用Electron+vue+vite构建桌面端应用(二)](http://192.168.137.36:8090/pages/viewpage.action?pageId=55083402)
-* [如何用Electron+vue+vite构建桌面端应用(三)](http://192.168.137.36:8090/pages/viewpage.action?pageId=55083587)
+* [如何用Electron+vue+vite构建桌面端应用(一)](https://github.com/Jesse121/blog/issues/3)
+* [如何用Electron+vue+vite构建桌面端应用(二)](https://github.com/Jesse121/blog/issues/4)
+* [如何用Electron+vue+vite构建桌面端应用(三)](https://github.com/Jesse121/blog/issues/5)
 
