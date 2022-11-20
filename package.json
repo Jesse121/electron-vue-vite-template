@@ -15,7 +15,7 @@
 		"postversion": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md && git commit -m \"chore: update changelog\" && git push",
 		"lint": "eslint src --fix --ext .vue,.ts,.tsx && stylelint \"src/**/*.{vue,css,less,scss}\" --quiet --fix"
 	},
-	"dependencies": {
+	"devDependencies": {
 		"adm-zip": "0.5.9",
 		"axios": "0.27.2",
 		"element-plus": "2.2.9",
@@ -26,9 +26,7 @@
 		"sequelize": "6.18.0",
 		"sqlite3": "5.0.2",
 		"vue": "3.2.37",
-		"vue-router": "4.1.2"
-	},
-	"devDependencies": {
+		"vue-router": "4.1.2",
 		"@commitlint/cli": "17.0.3",
 		"@commitlint/config-conventional": "17.0.3",
 		"@ls-lint/ls-lint": "1.10.0",
