@@ -10,7 +10,7 @@ import createMainWin from "./windows/mainWin";
 import createOtherWin from "./windows/otherWin";
 
 // 屏蔽不安全的协议http 提示
-process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
+process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = "true";
 
 export interface IElectronApp {
 	mainWin: BrowserWindow;
