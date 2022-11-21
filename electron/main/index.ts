@@ -42,6 +42,10 @@ class ElectronApp implements IElectronApp {
 			app.quit();
 			process.exit(0);
 		}
+		// 为当前可执行文件设置协议 所有 your-protocol:// 开头的链接将使用当前可执行文件打开
+		if (!app.isDefaultProtocolClient("electronApp")) {
+			app.setAsDefaultProtocolClient("electronApp");
+		}
 		app.on("window-all-closed", () => {
 			if (process.platform !== "darwin") {
 				app.quit();
