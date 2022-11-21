@@ -1,6 +1,6 @@
 {
 	"appId": "com.electron.app",
-	"productName": "ElecronApp",
+	"productName": "ElectronApp",
 	"copyright": "****",
 	"asar": false,
 	"directories": {
