@@ -78,5 +78,9 @@ export default defineConfig({
 				}
 			]
 		}
+	},
+	build: {
+		// 关闭小文件编译的行为 没必要为了减少请求数量而增加单个文件的解析开销
+		assetsInlineLimit: 0
 	}
 });
