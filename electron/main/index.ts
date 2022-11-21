@@ -29,7 +29,7 @@ class ElectronApp implements IElectronApp {
 			this.initMainWin();
 			this.initOtherWin();
 			this.initListenFullUpdate();
-			// handleDatabase();
+			handleDatabase();
 
 			this.loadModules();
 			loadVueDevtools();
