@@ -17,7 +17,7 @@ const routes: RouteRecordRaw[] = [
 		meta: {
 			title: "登录"
 		},
-		component: loginComponent
+		component: () => import("@/views/login/login.vue")
 	},
 	{
 		path: "/home",
@@ -30,7 +30,8 @@ const routes: RouteRecordRaw[] = [
 			{
 				path: "index",
 				name: "home",
-				component: homeComponent
+				// component: homeComponent
+				component: () => import("@/views/home/home.vue")
 			}
 		]
 	},
@@ -45,14 +46,15 @@ const routes: RouteRecordRaw[] = [
 			{
 				path: "index",
 				name: "other",
-				component: otherComponent
+				// component: otherComponent
+				component: () => import("@/views/other/other.vue")
 			}
 		]
 	},
 	{
 		// 更新窗口
 		path: "/update",
-		component: updateComponent
+		component: () => import("@/views/update/update.vue")
 	}
 ];
 const router = createRouter({
