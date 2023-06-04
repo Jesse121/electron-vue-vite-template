@@ -48,7 +48,6 @@
 		"prettier": "2.7.1",
 		"progress-stream": "2.0.0",
 		"qs": "6.11.0",
-		"sqlite3": "5.0.2",
 		"stylelint": "13.13.1",
 		"stylelint-config-prettier": "8.0.2",
 		"stylelint-config-rational-order": "0.1.2",
@@ -79,6 +78,7 @@
 		"node": ">= 16.0.0"
 	},
 	"dependencies": {
-		"sequelize": "6.18.0"
+		"sequelize": "6.18.0",
+		"sqlite3": "5.0.2"
 	}
 }

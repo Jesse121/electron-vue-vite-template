@@ -11,6 +11,9 @@ const afterPack = context => {
 	const unpackedApp = path.join(targetPath, "./app");
 	var zip = new AdmZip();
 	zip.addLocalFolder(unpackedApp);
+	// 不常更改的包可排除
+	zip.deleteFile("node_modules/sqlite3/");
+	zip.deleteFile("node_modules/sequelize/");
 
 	zip.writeZip(path.join(context.outDir, "app.zip"));
 };
